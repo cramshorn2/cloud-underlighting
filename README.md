@@ -8,19 +8,21 @@ A to-scale, interactive animation showing how Earth's shadow rises past cloud ba
 
 - A 68 km wide cross-section at 1 px = 0.1 km on both axes, west on the left.
 - An observer under a cloud, with two further clouds 29 km west and east. All cloud bases are at 6 km.
-- t = 0 is the observer's sunset: the sun is on the observer's horizon and the sunset point is at the observer.
+- At t = 0 the sun is 2.27° below the observer's horizon, so the edge of Earth's shadow passes 5 km above the observer. This reference point is the same for every rate.
 - The grazing ray (edge of Earth's shadow), parallel sun rays at 1 km intervals, the shadow itself, and the parts of each cloud base lit from below.
 - The distance from the observer to the sunset point, where the grazing ray touches the Earth.
 
-Frames are 0.25 min apart. The window depends on the rate selected, and each covers sun elevations at the observer from +2.75° to −1.125°:
+Frames run from t = −11 min to t = +4.5 min in 0.25 min steps (63 frames) for every rate. Changing the rate keeps the current frame.
 
-| Rate | Window | Frames |
-|---|---|---|
-| Equator, equinox | −11 to +4.5 min | 63 |
-| Basel, equinox | −16.5 to +6.75 min | 94 |
-| Basel, solstice | −20.25 to +8.5 min | 116 |
+What happens within the window depends on the rate:
 
-Changing the rate keeps the current sun elevation and jumps to the matching frame. In every window the shadow edge stays below the 6 km cloud bases.
+| Rate | Observer's sunset | Sun elevation at observer, start → end | Sunset point at start |
+|---|---|---|---|
+| Equator, equinox | t ≈ −9.1 min | +0.48° → −3.39° | 53.5 km east |
+| Basel, equinox | t ≈ −13.4 min (before window) | −0.41° → −3.03° | 45.8 km west |
+| Basel, solstice | t ≈ −16.6 min (before window) | −0.77° → −2.88° | 85.6 km west |
+
+So the sunset point is east of the observer only at the equator rate, before t ≈ −9.1 min. At the equator rate the cloud bases go dark between about t = −0.3 min (east end of the east cloud) and t = +2.2 min (west end of the west cloud).
 
 ## Controls
 
@@ -40,7 +42,7 @@ Spherical Earth (R = 6371 km), no refraction, constant rate of solar descent. Se
 
 The page is a single self-contained HTML file with no dependencies or build step. Open `index.html` in a browser.
 
-`index.html` wraps the animation code in a page shell with explanatory text. The shell supplies the colours and the 680 px width that the original chat widget took from its host; the system sans-serif font stands in for the original interface font.
+`index.html` wraps the animation code, unchanged from the final chat version, in a page shell with explanatory text. The shell supplies the colours and the 680 px width that the original chat widget took from its host; the system sans-serif font stands in for the original interface font.
 
 ## Deployment
 
