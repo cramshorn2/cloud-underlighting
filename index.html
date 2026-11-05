@@ -4,18 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cloud underlighting at sunset</title>
-<meta name="description" content="To-scale animation of Earth's shadow rising past 6 km cloud bases after sunset.">
+<meta name="description" content="To-scale animation of Earth's shadow rising past 6 km cloud bases after sunset, showing when clouds are lit from below.">
 <style>
 :root{--text-primary:#141413;--text-secondary:#5e5d59;--t:#73726c;--bg:#ffffff;--font:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 @media (prefers-color-scheme: dark){:root{--text-primary:#faf9f5;--text-secondary:#c2c0b6;--t:#9c9a92;--bg:#262624}}
-body{margin:0;background:var(--bg);color:var(--text-primary);font-family:var(--font)}
-.widget{max-width:680px;margin:0 auto;padding:16px}
+body{margin:0;background:var(--bg);color:var(--text-primary);font-family:var(--font);line-height:1.6}
+main{max-width:680px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:22px;font-weight:500;margin:0 0 4px}
+h2{font-size:18px;font-weight:500;margin:32px 0 8px}
+p,li{font-size:15px}
+.lede{color:var(--text-secondary);margin:0 0 16px}
 .widget svg{display:block}
 .ts{font-family:var(--font);font-size:12px;fill:var(--text-secondary)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+a{color:inherit}
+footer{margin-top:40px;font-size:13px;color:var(--text-secondary)}
 </style>
 </head>
 <body>
+<main>
+<h1>Cloud underlighting at sunset</h1>
+<p class="lede">To-scale animation of Earth's shadow rising past three cloud bases at 6 km after sunset. A cloud base is lit from below while the sun is below its local horizon but the base is still above the shadow edge.</p>
 <div class="widget">
 <!-- widget: verbatim copy of the final chat version -->
 <style>
@@ -145,5 +154,19 @@ rt.onchange=()=>draw(k);
 draw(0);play();
 </script>
 </div>
+
+<h2>What you are looking at</h2>
+<ul>
+<li><strong>Observer</strong> stands directly below the centre cloud. At t = 0 the sun is 2.27° below the observer's horizon, so the grazing ray (the edge of Earth's shadow) passes 5 km above the observer.</li>
+<li><strong>Clouds</strong>: three bases at 6 km, centred 29 km west, at, and 29 km east of the observer, each 10 km wide and aligned with its own local horizontal.</li>
+<li><strong>Grazing ray</strong> (bold amber, with arrow) is the sun ray that just touches the Earth at the <em>sunset point</em>; below it lies Earth's shadow (grey).</li>
+<li><strong>Sun rays</strong> (thin amber) are drawn at 1 km intervals, measured along the observer's vertical from the grazing ray.</li>
+<li><strong>Lit base</strong> (orange-red) marks the part of each cloud base that is lit from below.</li>
+<li><strong>Sunset point</strong> is east of the observer until the observer's own sunset (about t = −9.1 min at the equator rate), then moves west. With the Basel rates the observer's sunset falls before t = −11 min, so the sunset point is west in every frame.</li>
+</ul>
+<p>Frames run from t = −11 min to t = +4.5 min in 0.25 min steps. Full derivations and assumptions are in the <a href="https://github.com/cramshorn2/cloud-underlighting/blob/main/docs/geometry.md">geometry notes</a>.</p>
+
+<footer>Spherical Earth (R = 6371 km), no refraction, constant rate of solar descent. Source: <a href="https://github.com/cramshorn2/cloud-underlighting">github.com/cramshorn2/cloud-underlighting</a>.</footer>
+</main>
 </body>
 </html>
