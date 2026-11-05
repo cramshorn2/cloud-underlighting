@@ -36,7 +36,12 @@ The page is a single self-contained HTML file with no dependencies or build step
 
 ## Deployment
 
-The site is served by GitHub Pages from the root of the `main` branch.
+The site is served by GitHub Pages from the root of the `gh-pages` branch, which mirrors `main`. To publish changes, push `main` and then update `gh-pages`:
+
+```
+git push origin main
+git push origin main:gh-pages
+```
 
 ## Licence
 
