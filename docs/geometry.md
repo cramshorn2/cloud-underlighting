@@ -35,7 +35,7 @@ Let *e* be the sun's elevation at the observer (negative after sunset) and *s* =
 
     y = s·x + H,   H = s²R / 2
 
-It touches the surface at the sunset point x_T = −sR and bounds Earth's shadow for x > x_T. *H* is the height of the shadow edge above the observer. At t = 0 the animation uses H = 5 km, which gives e ≈ −2.27°.
+It touches the surface at the sunset point x_T = −sR and bounds Earth's shadow for x > x_T. *H* is the height of the shadow edge above the observer. In the animation t = 0 is the observer's sunset (e = 0, H = 0, sunset point at the observer), and e = −rate × t.
 
 The parabolic approximation of the surface differs from the sphere by well under one pixel in the 68 km window.
 
@@ -62,7 +62,7 @@ where φ is latitude, δ_sun the solar declination and H_a the hour angle at sun
 | Basel (47.5° N), equinox | ≈ 10.1°/h |
 | Basel (47.5° N), either solstice | ≈ 8.2°/h |
 
-The animation holds the rate constant over its 15.5 min window. The distance from the observer to the sunset point is R·|e| and therefore changes linearly with time: about 27.8, 18.8 and 15.2 km/min for the three cases.
+The animation holds the rate constant over its window (15.5, 23.25 or 28.75 min for the three cases). The distance from the observer to the sunset point is R·|e| and therefore changes linearly with time: about 27.8, 18.8 and 15.2 km/min for the three cases.
 
 ## 7. Time between sunset points
 
