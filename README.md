@@ -24,8 +24,6 @@ Frames run from t = −11 min to t = +4.5 min in 0.25 min steps.
 
 The readout below the controls gives the time, the sun's elevation at the observer, the height of the shadow edge above the observer, the distance to the sunset point and the state of each cloud base.
 
-If your system is set to reduce motion, the animation starts paused.
-
 ## Model
 
 Spherical Earth (R = 6371 km), no refraction, constant rate of solar descent. See [docs/geometry.md](docs/geometry.md) for the derivations, the reference tables and the model's limitations.
@@ -33,6 +31,8 @@ Spherical Earth (R = 6371 km), no refraction, constant rate of solar descent. Se
 ## Running locally
 
 The page is a single self-contained HTML file with no dependencies or build step. Open `index.html` in a browser.
+
+`index.html` wraps the animation code verbatim in a minimal page shell. The shell supplies the colours and the 680 px width that the original chat widget took from its host; the system sans-serif font stands in for the original interface font.
 
 ## Deployment
 

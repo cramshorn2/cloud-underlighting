@@ -4,41 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cloud underlighting at sunset</title>
-<meta name="description" content="To-scale animation of Earth's shadow rising past 6 km cloud bases after sunset, showing when clouds are lit from below.">
+<meta name="description" content="To-scale animation of Earth's shadow rising past 6 km cloud bases after sunset.">
 <style>
-:root{
-  --bg:#ffffff;--fg:#1f1e1d;--fg2:#5f5e5a;--t:#73726c;--border:#d3d1c7;
-  --font:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-}
-@media (prefers-color-scheme: dark){
-  :root{--bg:#1f1e1d;--fg:#ece9e1;--fg2:#b4b2a9;--t:#9c9a92;--border:#444441;}
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);line-height:1.6}
-main{max-width:860px;margin:0 auto;padding:24px 16px 48px}
-h1{font-size:22px;font-weight:500;margin:0 0 4px}
-h2{font-size:18px;font-weight:500;margin:32px 0 8px}
-p,li{font-size:15px}
-.lede{color:var(--fg2);margin:0 0 16px}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-svg{display:block;width:100%;height:auto}
-.ts{font:12px var(--font);fill:var(--fg2)}
-.ctl{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--fg2);margin-top:8px}
-.ctl button,.ctl select{font:13px var(--font);padding:4px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--fg);cursor:pointer}
-.ro{font-size:13px;font-variant-numeric:tabular-nums;margin-top:8px;line-height:1.7}
-a{color:inherit}
-footer{margin-top:40px;font-size:13px;color:var(--fg2)}
+:root{--text-primary:#141413;--text-secondary:#5e5d59;--t:#73726c;--bg:#ffffff;--font:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme: dark){:root{--text-primary:#faf9f5;--text-secondary:#c2c0b6;--t:#9c9a92;--bg:#262624}}
+body{margin:0;background:var(--bg);color:var(--text-primary);font-family:var(--font)}
+.widget{max-width:680px;margin:0 auto;padding:16px}
+.widget svg{display:block}
+.ts{font-family:var(--font);font-size:12px;fill:var(--text-secondary)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 </style>
 </head>
 <body>
-<main>
-<h1>Cloud underlighting at sunset</h1>
-<p class="lede">To-scale animation of Earth's shadow rising past three cloud bases at 6 km after sunset. A cloud base is lit from below while the sun is below its local horizon but the base is still above the shadow edge.</p>
-
-<h2 class="sr-only">Animation</h2>
-<svg viewBox="0 255 680 205" role="img" aria-labelledby="t1 d1">
-<title id="t1">Earth's shadow rising past three cloud bases</title>
-<desc id="d1">To-scale view at 1 pixel = 0.1 km, 68 km wide, west on the left. Observer and three clouds fixed; the grazing ray, parallel sun rays at 1 km intervals, Earth's shadow, the lit parts of the cloud bases and the distance to the sunset point change with the sun's elevation.</desc>
+<div class="widget">
+<!-- widget: verbatim copy of the final chat version -->
+<style>
+.ctl{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--text-secondary);margin-top:8px}
+.ro{font-size:13px;color:var(--text-primary);font-variant-numeric:tabular-nums;margin-top:6px;line-height:1.7}
+.ctl button,.ctl select{font-size:13px}
+</style>
+<h2 class="sr-only">Animation of Earth's shadow edge rising past three 6 km cloud bases above a fixed observer, with sun rays drawn at 1 km intervals, in quarter-minute frames from 11 minutes before to 4.5 minutes after the current configuration.</h2>
+<svg width="100%" viewBox="0 255 680 205" role="img"><title>Earth's shadow rising past three cloud bases</title><desc>To-scale view at 1 pixel = 0.1 km, 68 km wide. Observer and three clouds fixed; the grazing ray, parallel sun rays at 1 km intervals, Earth's shadow, the lit parts of the cloud bases and the distance to the sunset point change with the sun's elevation.</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
 <path d="M0 370.9 A63710 63710 0 0 1 680 370.9 L680 400 L0 400 Z" fill="#B4B2A9" stroke="#888780" stroke-width="0.8"/>
 <path id="sh" d="" fill="#888780" fill-opacity="0.22"/>
@@ -63,31 +49,16 @@ footer{margin-top:40px;font-size:13px;color:var(--fg2)}
 <line x1="40" y1="446" x2="64" y2="446" stroke="#EF9F27" stroke-width="1.4"/>
 <text class="ts" x="70" y="450">Sun rays, 1 km apart</text>
 </svg>
-
 <div class="ctl">
-<button id="pp" type="button">Pause</button>
-<input type="range" id="fr" min="0" max="62" step="1" value="0" style="flex:1;min-width:120px" aria-label="Frame">
-<select id="rt" aria-label="Rate of solar descent">
+<button id="pp">Pause</button>
+<input type="range" id="fr" min="0" max="62" step="1" value="0" style="flex:1;min-width:120px">
+<select id="rt">
 <option value="15">Equator, equinox (15.0°/h)</option>
 <option value="10.13">Basel, equinox (10.1°/h)</option>
 <option value="8.18">Basel, solstice (8.2°/h)</option>
 </select>
 </div>
-<div class="ro" id="ro" aria-live="off"></div>
-
-<h2>What you are looking at</h2>
-<ul>
-<li><strong>Observer</strong> stands directly below the centre cloud. At t = 0 the sun is 2.27° below the observer's horizon, so the grazing ray (the edge of Earth's shadow) passes 5 km above the observer.</li>
-<li><strong>Clouds</strong>: three bases at 6 km, centred 29 km west, at, and 29 km east of the observer, each 10 km wide and aligned with its own local horizontal.</li>
-<li><strong>Grazing ray</strong> (bold amber, with arrow) is the sun ray that just touches the Earth at the <em>sunset point</em>; below it lies Earth's shadow (grey).</li>
-<li><strong>Sun rays</strong> (thin amber) are drawn at 1 km intervals, measured along the observer's vertical from the grazing ray.</li>
-<li><strong>Lit base</strong> (orange-red) marks the part of each cloud base that is lit from below.</li>
-</ul>
-<p>Frames run from t = −11 min to t = +4.5 min in 0.25 min steps. Full derivations and assumptions are in the <a href="https://github.com/cramshorn2/cloud-underlighting/blob/main/docs/geometry.md">geometry notes</a>.</p>
-
-<footer>Spherical Earth (R = 6371 km), no refraction, constant rate of solar descent. Source: <a href="https://github.com/cramshorn2/cloud-underlighting">github.com/cramshorn2/cloud-underlighting</a>.</footer>
-</main>
-
+<div class="ro" id="ro"></div>
 <script>
 const R=6371,h0=5,hb=6,e0=-Math.acos(1/(1+h0/R)),XW=34,YT=11.5,NF=63,T0=-11,DT=0.25;
 const P=(x,y)=>[340+10*x,370-10*y];
@@ -171,8 +142,8 @@ function stop(){clearInterval(timer);timer=null;pp.textContent='Play';}
 pp.onclick=()=>timer?stop():play();
 fr.oninput=()=>{stop();k=+fr.value;draw(k);};
 rt.onchange=()=>draw(k);
-draw(0);
-if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)stop();else play();
+draw(0);play();
 </script>
+</div>
 </body>
 </html>
